@@ -1,29 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Website</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <h1>My Website</h1>
+<!doctype html>
 
-  <p>This is a simple webpage hosted on GitHub.</p>
-  <p>Here is a second line of text.</p>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aidan Lau </title>
+    <meta name="author" content="Aidan Lau" />
+    <meta name="description" content="Aidan Lau's research webpage" >
+    <meta property="og:title" content="Aidan Lau's webpage"/>
 
-</body>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="my_styles.css"/>
+  </head>
+
+  <body>
+    
+    <header>
+      <h1>Aidan Lau</h1>
+      <nav>
+        <ul>
+          <li><h1 class="nav-header"><a href="index.html">Home</a></h1></li>
+          <li><h1 class="nav-header"><a href="cv.html">CV</a></h1></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-home-page">
+    
+    <section id = "pic-column">
+        <img src="profile3.jpeg" id="picture" alt="Profile picture"/> <!--width="2216" height="3383"-->
+    </section>
+
+    <section id="text-column">
+
+      <div id="info">
+        <p>I am a third-year PhD student at <a href="https://math.nyu.edu/dynamic/">NYU Courant</a>, advised by <a href="https://www.scottnarmstrong.com/">Scott Armstrong</a>.
+          My current research is in stochastic homogenization, and I am broadly interested in problems in probability and analysis.
+          I did my undergraduate studies in <a href="https://artsci.calendar.utoronto.ca/program/asspe0397">
+          Mathematics and Physics</a> at the University of Toronto.</p>
+      </div>
+
+
+      <div class = "box"> <!-- Preprints -->
+      <h2> Preprints </h2>
+        <ol>
+          <li>A. Lau. <a href="https://arxiv.org/abs/2604.07528">Coarse-graining and quantitative stochastic homogenization of
+            parabolic equations in high contrast</a>. Preprint, 2026.
+          <li>A. Lau. <a href="https://arxiv.org/abs/2512.18469">Stochastic homogenization of coarse-grained elliptic equations</a>.
+            Preprint, 2025.
+          </li>  
+        </ol>
+      </div>
+
+      <hr>
+
+      <div class="box">
+      <h2> Publications </h2>
+        <ol id="my-list">
+          <li> A.H. Duff, A. Lau, J.E. Sipe. <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.235206">
+            Microscopic theory of the magnetic susceptibility of insulators</a>. <em>Phys. Rev. B</em> 108 (2023), 235206.
+          </li>
+        </ol>
+      </div>
+    
+    </section>
+      
+    
+    </main>
+
+    
+
+  </body>
 </html>

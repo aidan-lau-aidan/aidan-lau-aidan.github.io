@@ -1,0 +1,183 @@
+
+html {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(180deg, #F6F6F6 0%, #fcfcfb 100%);
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 2rem 10rem 0 10rem;
+  padding: 2rem 2rem 0 0rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  align-items: flex-end;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-header {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+main {
+  font-family: "Inter", sans-serif;
+}
+
+#main-home-page {
+  display: flex;
+  margin: 0.5rem 10rem;
+}
+
+#main-cv {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 10rem;
+}
+
+
+#sec-cv {
+  margin: 0;
+  padding: 1rem;
+  max-width: 75%;
+}
+
+#sec-title {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#cv-title {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+#info {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  margin: 1rem;
+  padding: 0.25rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #c9cbcf;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #14379a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #0d215a;
+}
+
+#text-column {
+  width: 70%;
+  margin: 0;
+  padding: 1rem;
+}
+
+#pic-column {
+  width: 30%;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items:first baseline;
+}
+
+#picture {
+  width: 100%;
+  height: auto;
+  border: 1pt solid black;
+  margin: 0;
+}
+
+
+h1 {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #111827;
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 250;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 250
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  #main-home-page, #main-cv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  header {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  #text-column {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #pic-column {
+    width:80%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #sec-cv {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+}
