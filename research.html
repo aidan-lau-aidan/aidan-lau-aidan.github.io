@@ -18,6 +18,8 @@
             tex: {
                 macros: {
                 Z: "\\mathbb{Z}",
+                R: "\\mathbb{R}",
+                a: "{\\bf a}"
                 }
             }
         };
@@ -29,10 +31,81 @@
     <div id="header-placeholder"></div>
 
     <main id="main-research">
-        <section>
-            <h2>Stochastic Homogenization</h2>
-            <p>Stochastic homogenization is the study of...</p>
-        </section>
+        <div class="research-div">
+            <h1>Stochastic Homogenization</h1>
+            <section>
+                <p class="math-paragraph">
+                    This page is a very short overview of the classical ideas of stochastic homogenization. The goal is to provide
+                    some intuition, a visual, and some <a href="#links">links to much better explanations</a>.
+                </p>
+                <p class="math-paragraph">
+                    The basic intuition
+                    in stochastic homogenization is that of an inhomogeneous material. We imagine that there is a background which conducts
+                    heat unevenly in different places, and model this environment by a stationary, matrix-valued, random coefficient field
+                    \(\a(\cdot)\). Stationarity means that for every shift \(y\), the random fields
+                    \(\mathbf a(\cdot)\) and \(\mathbf a(\cdot+y)\) have the same law. In other words, the field is statistically homogeneous:
+                    it looks the same everywhere in space. In order to see deterministic large-scale behaviour, we assume in addition
+                    that the law of the coefficient field is ergodic (averaging occurs, via the ergodic theorem). However, conductivity
+                    itself is not a directly observable quantity. Instead we track the position of a diffusing particle or the flow of heat in the
+                    material, which leads us to consider the homogenization of a specific PDE.
+                </p>
+                <p class="math-paragraph">
+                    The basic mathematical setup is the following. Suppose that \(\a(\cdot)\) is an \(\R^d\)-stationary, ergodic,
+                    uniformly elliptic, matrix-valued random field. We want to find a constant, deterministic, effective matrix
+                    \(\bar{\a}\) such that if for every
+                    \(\epsilon\in (0,1) \) we let \(u^\epsilon\) (the heterogeneous solution) and let \(\bar{u}\) (the homogenized
+                    solution) be the unique solutions (for nice enough \(U,f,g\)) to
+                    \[\left\{\begin{aligned} - \nabla \cdot \a(x/\epsilon) \nabla u^\epsilon & = f & \mbox{ in } U\\
+                    u^\epsilon & = g & \mbox{ on } \partial U  \end{aligned} \right.
+                    \quad \quad
+                    \left\{\begin{aligned} - \nabla \cdot \bar{\a} \nabla \bar{u} & = f & \mbox{ in } U\\
+                    \bar{u} & = g & \mbox{ on } \partial U  \end{aligned} \right. \]
+                    then almost surely with respect to the randomness of the coefficient field
+                    \[ \lim_{\epsilon \to 0}\|u^\epsilon - \bar{u} \|_{L^2(U)} = 0\,. \]
+                Motivated by the "two-scale expansion", the classical homogenization theory states that the homogenized matrix \(\bar{\a}\)
+                is constructed as a corrected ergodic averaging of the coefficient field. That is, for every \(e\in 
+                \R^d\) there exists a unique stationary gradient field \(\nabla \phi_e\) solving
+                \[ \nabla \cdot \a (e + \nabla \phi_e) = 0\,, \]
+                and the homogenized matrix is then defined by
+                \[\bar{\a}e = \mathbb{E}[\a (e + \nabla \phi_e)]\,. \]
+                </p>
+                <p class="math-paragraph">
+                    Since elliptic operators are the generators of diffusion processes, we can also consider convergence of the
+                    diffusion processes. If \(\a=
+                    \frac{1}{2}\sigma\sigma^t\) then \(\nabla \cdot \a \nabla\) is the generator corresponding to the SDE
+                    \[dX_t = \frac{1}{2}\nabla \cdot (\sigma\sigma^t)(X_t) dt + \sigma(X_t)dB_t \]
+                    and \(\nabla \cdot \a(\cdot/ \epsilon) \nabla\) is the generator of the rescaled process
+                    \( Y^\epsilon_t = \epsilon X_{t/\epsilon^2}\). Classical homogenization theory then states that there
+                    exists a deterministic matrix \(\bar{\a}\) such that if \(\bar{B}_t\) is the Brownian motion with
+                    covariance matrix \(2\bar{\a}\) then we have convergence in law of the family of rescaled processes:
+                    \[Y^\epsilon_t \overset{\epsilon \to 0}{\Rightarrow} \bar{B}_t\,. \]
+                </p>
+                <p class="math-paragraph">
+                It is worth mentioning the two classical cases in which the effective matrix \(\bar{\a}\) can be directly computed:
+                </p>
+                <ul>
+                    <li>In the one dimensional case the effective matrix is the harmonic mean \(\bar{\a}
+                        =\mathbb{E}[\a^{-1}]^{-1}\).</li>
+                    <li>In the \(2d\) random checkerboard example (which is \(\Z^2\) stationary), if each square
+                        is coloured independently with probability \(1/2\) either black or white and
+                        \[\a(x) = \begin{cases} \lambda \mathrm{Id} & \mbox{white squares} \\
+                        \Lambda \mathrm{Id} & \mbox{black squares}\end{cases}\]
+                        then the homogenized matrix is the geometric mean \(\bar{\a} = \sqrt{\lambda\Lambda}\mathrm{Id}\).
+                    </li>
+                </ul>
+
+            </section>
+            <section>
+                <h2 id="links">Links</h2>
+                <p class="math-paragraph">
+                    All of this material and much more can be found in the classical books <a href="https://www.sciencedirect.com/bookseries/studies-in-mathematics-and-its-applications/vol/5/suppl/C">
+                    Asymptotic Analysis for Periodic Structures</a> and <a href="https://link.springer.com/book/10.1007/978-3-642-84659-5">
+                    Homogenization of Differential Operators and Integral Functionals</a>. See also
+                    <a href="https://arxiv.org/pdf/1901.05035v2">an informal introduction to quantitative stochastic homogenization</a>
+                    and <a href="https://arxiv.org/abs/1705.05300">Quantitative Stochastic Homogenization and Large-Scale Regularity</a>.
+                </p>
+            </section>
+        </div>
     </main>
 
 </body>

@@ -3,4 +3,5 @@ fetch('header.html')
   .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
     document.body.classList.add('loaded');
-  });
+  })
+  .catch(() => document.body.classList.add('loaded'));
