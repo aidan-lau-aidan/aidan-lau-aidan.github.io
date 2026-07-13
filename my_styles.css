@@ -3,6 +3,7 @@ html {
   min-height: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -10,11 +11,18 @@ body {
   max-width: 100%;
   margin: 0;
   padding: 0;
+  opacity: 0; /* wait to load header before showing*/
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* for after the header is loaded*/
+body.loaded {
+  opacity: 1;
 }
 
 header {
   margin: 2rem 10rem 0 10rem;
-  padding: 2rem 2rem 0 0rem;
+  padding: 2rem 0 0 0;
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid black;
@@ -30,10 +38,6 @@ nav ul {
   align-items: center;
 }
 
-.nav-header {
-  font-size: 2rem;
-  font-weight: 100;
-}
 
 main {
   font-family: "Inter", sans-serif;
@@ -50,6 +54,11 @@ main {
   margin: 2rem 10rem;
 }
 
+#main-research {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 10rem;
+}
 
 #sec-cv {
   margin: 0;
@@ -62,6 +71,16 @@ main {
   padding: 0;
   display: flex;
   flex-direction: column;
+}
+
+.math-paragraph {
+  margin: 0;
+  padding: 0.5rem 0;
+  line-height: 1.35;
+}
+
+.research-div {
+  padding: 0 1rem;
 }
 
 #cv-title {
@@ -119,7 +138,7 @@ a:hover {
 }
 
 
-h1 {
+.text-header {
   font-family: "IBM Plex Sans", sans-serif;
   color: #111827;
   margin: 0;
@@ -127,29 +146,54 @@ h1 {
   font-weight: 200;
 }
 
-h2 {
+
+.nav-header {
+  font-family: "IBM Plex Sans", sans-serif; 
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+h1 {
   font-size: 1.75rem;
   font-weight: 300;
   margin: 0;
   padding: 0.5rem 0;
 }
 
-h3 {
-  font-size: 1rem;
+h2 {
+  font-size: 1.25rem;
   font-weight: 250;
 }
 
-h4 {
+h3 {
   font-size: 1rem;
   font-weight: 250
 }
 
+#diffusion-videos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+}
 
+#diffusion-videos div{
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0;
+}
 
+#diffusion-videos video{
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 
 @media (max-width: 768px) {
-  #main-home-page, #main-cv {
+  #main-home-page, #main-cv, #main-research {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -161,6 +205,8 @@ h4 {
   header {
     margin: 1rem;
     padding: 1rem;
+    flex-direction: column;
+    align-items: center;
   }
 
   #text-column {
@@ -179,5 +225,11 @@ h4 {
     width: 100%;
     margin: 0;
     padding: 1rem;
+  }
+
+  #diffusion-videos {
+    flex-direction: column;
+    width: 100%;
+    padding-inline: 0;
   }
 }
