@@ -1,4 +1,8 @@
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   min-height: 100%;
   margin: 0;
@@ -81,7 +85,15 @@ main {
 
 .research-div {
   padding: 0 1rem;
+  width: 100%;
   max-width: 100%;
+  min-width: 0;
+}
+
+mjx-container[display="true"] {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 #cv-title {
