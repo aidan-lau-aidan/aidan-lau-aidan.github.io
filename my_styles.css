@@ -81,6 +81,7 @@ main {
 
 .research-div {
   padding: 0 1rem;
+  max-width: 100%;
 }
 
 #cv-title {
